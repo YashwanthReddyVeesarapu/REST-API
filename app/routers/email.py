@@ -32,6 +32,7 @@ def sendemail(data: models.Mail):
         sesssion.starttls()
         sesssion.login(user=user,password=password)
         sesssion.send_message(from_addr=user,to_addrs=email,msg=msg)
+        sesssion.close()
     except Exception as e:
         print(e)
         raise HTTPException(status_code=500,detail="Error")
