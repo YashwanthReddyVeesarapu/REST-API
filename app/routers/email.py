@@ -14,16 +14,6 @@ user = "redfashion.in@gmail.com"
 password = "qsrhrhwvlroirosc"
 
 
-try:
-    sesssion = smtplib.SMTP('smtp.gmail.com',587)
-    sesssion.starttls()
-    sesssion.login(user=user,password=password)
-
-except Exception as e:
-    print(e)
-
-
-
 @router.post("/",status_code=200)
 def sendemail(data: models.Mail):
     email = data.toMail
@@ -38,6 +28,9 @@ def sendemail(data: models.Mail):
     msg.set_content(MIMEText(html,'html'))
 
     try:
+        sesssion = smtplib.SMTP('smtp.gmail.com',587)
+        sesssion.starttls()
+        sesssion.login(user=user,password=password)
         sesssion.send_message(from_addr=user,to_addrs=email,msg=msg)
     except Exception as e:
         print(e)
