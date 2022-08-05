@@ -78,3 +78,10 @@ class Mail(BaseModel):
     toMail: str
     html: str
     subject: str
+
+class Redflixlogin(BaseModel):
+    username: str
+    password: str
+
+class LoginToken(BaseModel):
+    access_token : str

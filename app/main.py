@@ -2,7 +2,7 @@ import hashlib
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import payment, email
+from .routers import payment, email, image, redflix
 
 
 app = FastAPI()
@@ -16,6 +16,8 @@ app.add_middleware(
 
 app.include_router(payment.router)
 app.include_router(email.router)
+app.include_router(image.router)
+app.include_router(redflix.router)
 
 
 @app.get("/")
