@@ -1,10 +1,10 @@
 # from io import BytesIO
-# from fastapi import APIRouter, UploadFile
+from fastapi import APIRouter, UploadFile
 # from fastapi.responses import StreamingResponse
 # from PIL import Image
 # import base64
 
-# router = APIRouter( prefix="/image" ,tags=["Image"])
+router = APIRouter( prefix="/image" ,tags=["Image"])
 
 # @router.post("/webp")
 # def convert_to_webp(img: UploadFile):
