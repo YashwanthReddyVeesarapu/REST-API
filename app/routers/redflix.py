@@ -11,7 +11,7 @@ prepassword= "#1#23#4#"
 
 router = APIRouter(prefix="/redflix", tags=['Redflix'])
 
-SECRET_KEY = "09d25e-094f-"+ str(datetime.utcnow().date()) + "aa-6ca2-556" + str(datetime.utcnow().hour)
+SECRET_KEY = "09d25e-094f-"+ str(datetime.now().date().month) + "aa-6ca2-556" + str(datetime.now().hour)
 print(SECRET_KEY)
 
 
